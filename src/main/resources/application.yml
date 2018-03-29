@@ -1,0 +1,14 @@
+spring.profiles.include: configuration
+
+spring.data.cassandra:
+  contact-points: localhost
+  port: 9042
+  keyspace-name: emirates_todoapplication
+  ttl: 86400 #1 day
+
+# Logging, Access Logs
+logging:
+  level:
+    com.emirates: 'DEBUG'
+    com.datastax: 'INFO'
+    org.apache: 'INFO'

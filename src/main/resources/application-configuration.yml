@@ -1,0 +1,21 @@
+configuration:
+  projectName: "todoApplication"
+  appversion : '/toDoApplication-rs/v1'
+  appcontext: '/tasks'
+
+server:
+  context-path: '/toDoApplication-rs'
+
+validation:
+  task:
+    statusValues: 'PENDING, COMPLETED'
+
+api.error.code.prefix: task.errors.codes.
+api.error.message.prefix: task.errors.messages.
+
+task:
+  errors:
+    codes:
+      TASK_NAME_INVALID: TASK_NAME_INVALID
+    messages:
+      TASK_NAME_INVALID: Task name is invaild.Pls provide correct task name
