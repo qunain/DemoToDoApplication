@@ -115,7 +115,7 @@ public class ToDoApplicationRepositoryImpl implements ToDoApplicationRepository 
   public void deleteTask(String taskId) {
     log.debug(LOG_OK_PATTERN,"deleteTask","Delete task details from repository");
     Delete delete = QueryBuilder.delete().from(TaskConstants.TABLE_NAME.getName());
-    delete.where(QueryBuilder.eq(TaskConstants.ID.getName(), taskId));
+    delete.where(QueryBuilder.eq(TaskConstants.ID.getName(), UUID.fromString(taskId)));
     commonRepository.execute(delete);
   }
 

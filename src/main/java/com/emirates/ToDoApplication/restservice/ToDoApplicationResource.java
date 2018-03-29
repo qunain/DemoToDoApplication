@@ -134,8 +134,8 @@ public class ToDoApplicationResource extends BaseResource{
 
     log.info(LOG_OK_PATTERN, "deleteTask", "delete task for taskId =" + taskId);
 
-    if (null != taskId) {
-      log.error(LOG_KO_PATTERN, "updateTask", "taskId is null") ;
+    if (null == taskId || taskId.toString().isEmpty()) {
+      log.error(LOG_KO_PATTERN, "delete", "taskId is null") ;
       throw new InvalidRequestException("task Id cannot be null");
     }
 
